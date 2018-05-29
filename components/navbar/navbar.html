@@ -1,0 +1,14 @@
+<div class="nav-container" tabindex="-1" ng-blur="toggleNav()">
+  <nav class="navbar" ng-class="{'open': show}">
+    <ul class="navbar-list">
+      <li ng-repeat="tab in tabs">
+        <div  class="tab" ng-click="select(tab)">
+          <div class="res" ng-style="::{'background-image': 'url(' + tab.icon + ')'}"></div>
+          <span ng-bind="tab.header"></span>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <img class="hamburger" ng-click="toggleNav()" src="./assets/images/ham.svg"></img>
+
+</div>

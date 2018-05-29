@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/general.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+    <title>Decaf IDE</title>
+  </head>
+  <body ng-app="core">
+    <div class="header">
+      <span class="control-btn close  icon" id="close-btn"></span>
+      <span class="control-btn maximize icon" id="maximize-btn"></span>
+      <span class="control-btn minimize icon" id="minimize-btn"></span>
+    </div>
+    <div class="container">
+      <navbar></navbar>
+      <main ng-controller="MainCtrl as ctrl">
+        <tab header="Text Editor" icon="./assets/images/editor.png">
+          <tape></tape>
+          <div class="toolbar">
+            <button id="compile-btn" ng-click="ctrl.run()" class="emerald-flat-button">
+              Run
+            </button>
+          </div>
+          <div id="editor" ui-ace="{
+            theme:'twilight',
+            onLoad: ctrl.aceLoaded,
+            mode: 'c_cpp'
+          }"></div>
+        </tab>
+        <tab header="Sequence" icon="./assets/images/tree.png">
+
+        </tab>
+      </main>
+    </div>
+
+    
+    <script type="text/javascript">
+      require('./renderers/main-form.js');
+    </script>
+    <script type="text/javascript" src="./assets/lib/angular.min.js"></script>
+    <script type="text/javascript" src="./components/navbar/navbar.js"></script>
+    <script type="text/javascript" src="./components/navbar/navbar-service.js"></script>
+    <script type="text/javascript" src="./components/navbar/navbar-directive.js"></script>
+    <script type="text/javascript" src="./components/tab/tab-directive.js"></script>
+    <script type="text/javascript" src="./components/tape/tape-directive.js" ></script>
+    <script type="text/javascript" src="./node_modules/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./components/core/core.js"></script>
+    <script type="text/javascript" src="./components/core/mainctrl.js"></script>
+    <script type="text/javascript" src="./node_modules/ace-builds/src-min-noconflict/ace.js"></script>
+    <script type="text/javascript" src="./assets/lib/ui-ace.js"></script>
+  </body>
+</html>

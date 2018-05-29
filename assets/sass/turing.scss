@@ -1,0 +1,35 @@
+
+.tape-section {
+  height: 350px;
+  width: 100%;
+  border: 1rem solid #fbf1c7;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+
+}
+
+.sector {
+  min-width: 20%;
+  border: 0.5rem solid black;
+  color: white;
+  text-align: center;
+  font-size: 5rem;
+  line-height: 310px;
+  overflow: hidden;
+}
+
+.head {
+  min-width: 20%;
+  border: 0.5rem solid green;
+  color: white;
+  text-align: center;
+  font-size: 5rem;
+  line-height: 310px;
+  overflow: hidden;
+}
+
+
+
+
